@@ -17,7 +17,9 @@ function HealthHUD()
 		hp_init = LocalPlayer():Health()
 		alpha_value=0
 	end
-	if LocalPlayer():Health()>=100  then
+	intensity = math.max(80 - LocalPlayer():Health(), 0)
+	relation = math.Clamp((70 - LocalPlayer():Health()) / 40, 0, 1)	
+	/*if LocalPlayer():Health()>=100  then
 		intensity = 100 - 100
 		relation = 0
 		
@@ -26,7 +28,7 @@ function HealthHUD()
 			relation = math.Clamp((70 - LocalPlayer():Health()) / 40, 0, 1)	
 		end
 		intensity = 100 - LocalPlayer():Health()
-	end
+	end*/
 	
 
 	local tab = {}
